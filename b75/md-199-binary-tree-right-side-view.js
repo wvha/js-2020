@@ -104,4 +104,18 @@ var rightSideView = function(root) {
     return result;
 }
 
+// recursive 
+var rightSideView = function(root) {
+    const result = [];
+    
+    let traverse = function(node, level) {
+        if (!node) return;
+        result[level] = node.val;
+        traverse(node.left, level + 1);
+        traverse(node.right, level + 1);
+    }
+    traverse(root, 0);
+    return result;
+}
+
 
